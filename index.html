@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ceylinim’e Sürpriz</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #240046, #3c096c);
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .options {
+      margin-top: 1.5rem;
+    }
+
+    button {
+      margin: 1rem;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      background: #ff4d6d;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ff88a5;
+    }
+
+    .heart {
+      position: fixed;
+      width: 30px;
+      height: 30px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+      animation: fly 2s ease forwards;
+    }
+
+    @keyframes fly {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+    }
+
+    .reaction {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+      color: #ffd6ff;
+    }
+
+    .note {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .signature {
+      margin-top: 3rem;
+      font-style: italic;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💘 BEBEGIM SENI SEVIYORUMM 💘</h1>
+
+  <h2>Bugün sana ne yapsam havalara uçarsın?</h2>
+
+  <div class="options">
+    <button onclick="showHearts('bitanem gunaydin, gunumu guzellestirmek icin tek gamzelerin yeterli(en cok mutlu guluslerinde belli oluyor)')">🍫 sabahlari gunaydin mesaji </button>
+    <button onclick="showHearts('🧸 kapiya bakarmisin bitanemm (geldimde):)')">🧸 Ayıcıkla kapına gelmesi</button>
+    <button onclick="showHearts('📦 sadece dunya guzeliye, EVET SEN SENI DIYORUM YAVRUMM, farkinda degil hala prensess:) senin kalkmani bekleyen biri varda gunes cikmadan bisey yapamiyor , ')">📦 sevgiyle dolu minik kutu</button>
+  </div>
+
+  <div class="reaction" id="reaction"></div>
+  <div class="note" id="note">
+    Birtanem...<br>
+    Gizelim, yavrum, bebeğim... benimmm <br><br>
+    Bu satırlar sana özel, çünkü sen sıradan biri değilsin.<br>
+    Gülüşün içimi ısıtan en güzel şarkı gibi...  
+    Kalbin, gördüğüm en temiz, en saf yer.<br><br>
+    Bu minicik kutuya sığdıramam belki sevgimi,<br>
+    ama seninle geçen her anı kalbimde büyütüyorum.<br><br>
+    Seni seviyorum, çünkü sen sen olduğun için çok güzelsin.<br>
+    Ve ben, seni düşündüğüm her saniyede daha çok seviyorum...
+  </div>
+
+
+  <p class="signature">KALBIMIN GUNESI AY YUZLUM -- Ceylinim’e 💙</p>
+
+  <script>
+    function showHearts(message) {
+      document.body.style.background = 'linear-gradient(to right top, #ff758f, #ff7eb3, #ffc3a0)';
+      for (let i = 0; i < 40; i++) {
+        const h = document.createElement('div');
+        h.className = 'heart';
+        h.style.left = Math.random() * 100 + 'vw';
+        h.style.top = '100vh';
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 2000);
+      }
+      document.getElementById('reaction').textContent = `TEK SANA OZELL: ${message} 💖`;
+      document.getElementById('note').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
