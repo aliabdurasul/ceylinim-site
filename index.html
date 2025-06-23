@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <script>
+    let pass = prompt("Sayfayı görüntülemek için şifre girin:");
+    if (pass !== "prensess") {
+      document.body.innerHTML = "❌ Erişim Reddedildi";
+    }
+  </script>
   <div class="overlay"></div>
   <div class="content">
     <h1>💖 Seni Seviyorum Ceylinim 💖</h1>
